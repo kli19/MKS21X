@@ -18,8 +18,14 @@ public class ReversedCharSeq{
 	return str.length();
     }
 
-    public String subSequence(int start, int end){
-	return str.substring(start, end);
+    public ReversedCharSeq subSequence(int start, int end){
+	String temp = "";
+	for (int i = end-1; i >= start; i--){
+	    temp += str.charAt(i);	    
+	}
+	ReversedCharSeq sub = new  ReversedCharSeq(temp);
+	return sub;
+
     }
 
     public String toString(){
