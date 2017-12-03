@@ -11,11 +11,11 @@ public class ReferenceBook extends LibraryBook{
 
 
     public void checkout(String patron, String due){
-	throw new UnsupportedOperationException("cannot checkout a reference book");
+	System.out.println("cannot checkout a reference book");
     }
 
     public void returned(){
-	throw new UnsupportedOperationException("reference book could not have been checked out -- return impossible");
+        System.out.println("reference book could not have been checked out -- return impossible");
     }
     
     public String circulationStatus(){
