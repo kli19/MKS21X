@@ -4,7 +4,7 @@ public class SuperArray implements Iterable<String>{
     private int size;
 
     private class superArrayIterator implements Iterator<String> {
-	int next;
+	private int next;
 	SuperArray data;
 	public superArrayIterator(SuperArray s){
 	    int next = 0;
