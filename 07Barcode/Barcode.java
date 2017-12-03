@@ -1,16 +1,10 @@
 public class Barcode implements Comparable<Barcode>{
     private String[] dictionary = {"||:::", ":::||", "::|:|", "::||:", ":|::|", ":|:|:", ":||::", "|:::|", "|::|:", "|:|::"};
     private String zip;
-    private String code;
 
     public Barcode(String zip){
 	this.zip = zip;
 	this.zip += checksum();
-	String temp = "";
-	for (int i = 0; i < this.zip.length(); i++){
-	    temp += dictionary[Integer.parseInt(this.zip.substring(i, i+1))];
-	}
-	code = "|" +  temp + "|";
     }
 
     public String getZip(){
@@ -18,7 +12,12 @@ public class Barcode implements Comparable<Barcode>{
     }
 
     public String getCode(){
-	return code;
+	String code = "";
+	for (int i = 0; i < zip.length(); i++){
+	    code += dictionary[Integer.parseInt(zip.substring(i, i+1))];
+	}
+	return "|" +  code + "|";
+
     }
 
     public String toString(){
