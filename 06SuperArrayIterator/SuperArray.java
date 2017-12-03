@@ -3,6 +3,23 @@ public class SuperArray implements Iterable<String>{
     private String[] data;
     private int size;
 
+    public class superArrayIterator implements Iterator<String> {
+	int next;
+	SuperArray data;
+	public superArrayIterator(SuperArray s){
+	    int next = 0;
+	    data = s;
+	}
+	public String next(){
+	    next++;
+	    return data.get(next-1);
+	}
+
+	public boolean hasNext(){
+	    return next <= data.size();
+	}
+    }
+    
     public Iterator<String> iterator(){
 	return new superArrayIterator(this);
     }

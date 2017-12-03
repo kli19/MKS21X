@@ -1,9 +1,0 @@
-private class superArrayIterator implements Iterator<String> {
-    public String next(){
-
-    }
-
-    public String hasNext(){
-
-    }
-}
