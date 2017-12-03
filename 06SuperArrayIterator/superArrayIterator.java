@@ -1,10 +1,17 @@
 import java.util.*;
 public class superArrayIterator implements Iterator<String> {
+    int next;
+    SuperArray data;
+    public superArrayIterator(SuperArray s){
+	int next = 0;
+	data = s;
+    }
     public String next(){
-	return "";
+	next++;
+	return data.get(next-1);
     }
 
     public boolean hasNext(){
-	return true;
+	return next <= data.size();
     }
 }
