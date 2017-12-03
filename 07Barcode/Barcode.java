@@ -5,11 +5,12 @@ public class Barcode implements Comparable<Barcode>{
 
     public Barcode(String zip){
 	this.zip = zip;
+	this.zip += checksum();
 	String temp = "";
-	for (int i = 0; i < zip.length(); i++){
-	    temp += dictionary[Integer.parseInt(zip.substring(i, i+1))];
+	for (int i = 0; i < this.zip.length(); i++){
+	    temp += dictionary[Integer.parseInt(this.zip.substring(i, i+1))];
 	}
-	code = temp;
+	code = "|" +  temp + "|";
     }
 
     public String getZip(){
@@ -21,7 +22,7 @@ public class Barcode implements Comparable<Barcode>{
     }
 
     public String toString(){
-	return getZip() + checksum() + "\n" + getCode();
+	return getZip() + "\n" + getCode();
     }
 
 	
