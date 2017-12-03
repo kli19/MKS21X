@@ -1,5 +1,5 @@
 public class Barcode implements Comparable<Barcode>{
-    private String[] dictionary = {"||:::", ":::||", "::|:|", "::||:", ":|::|", ":|:|:", ":||::", "|:::|", "|::|:", "|:|::"};
+    private intay = [
     private String zip;
 
     public Barcode(String zip){
