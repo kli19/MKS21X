@@ -3,7 +3,7 @@ public class SuperArray implements Iterable<String>{
     private String[] data;
     private int size;
 
-    public class superArrayIterator implements Iterator<String> {
+    private class superArrayIterator implements Iterator<String> {
 	int next;
 	SuperArray data;
 	public superArrayIterator(SuperArray s){
@@ -11,12 +11,17 @@ public class SuperArray implements Iterable<String>{
 	    data = s;
 	}
 	public String next(){
-	    next++;
+	    if (hasNext()){
+		next++;
+	    }
+	    else{
+		System.exit(0);
+	    }
 	    return data.get(next-1);
 	}
 
 	public boolean hasNext(){
-	    return next <= data.size();
+	    return next < data.size();
 	}
     }
     
