@@ -1,6 +1,8 @@
-public class BarCode implements Comparable<BarCode>{
+public class Barcode implements Comparable<Barcode>{
 
-    public int compareTo(BarCode other){
+  
+
+    public int compareTo(Barcode other){
 	return 0;
     }
 }
