@@ -1,10 +1,18 @@
 public class Barcode implements Comparable<Barcode>{
-    private String[] dictionary = {"||:::", ":::||", "::|:|", "::||:", ":|::|", ":|:|:", ":||::", "|:::|", "|::|:", "|:|::"};
+    private static String[] dictionary = {"||:::", ":::||", "::|:|", "::||:", ":|::|", ":|:|:", ":||::", "|:::|", "|::|:", "|:|::"};
     private String zip;
 
     public Barcode(String zip){
+	if (zip.length() != 5){
+	    throw new IllegalArgumentException();
+	}
+        try {
+	    int s;
+	    s = Integer.parseInt(zip);
+	} catch (NumberFormatException e){
+	    throw new IllegalArgumentException();
+	}
 	this.zip = zip;
-	this.zip += checksum();
     }
 
     public String getZip(){
@@ -16,12 +24,13 @@ public class Barcode implements Comparable<Barcode>{
 	for (int i = 0; i < zip.length(); i++){
 	    code += dictionary[Integer.parseInt(zip.substring(i, i+1))];
 	}
+	code += dictionary[checksum(zip)];
 	return "|" +  code + "|";
 
     }
 
     public String toString(){
-	return getZip() + "\n" + getCode();
+	return getCode() + " (" + getZip() + ")";
     }
 
 	
@@ -33,7 +42,7 @@ public class Barcode implements Comparable<Barcode>{
 	return compareTo(other) == 0;
     }
 
-    public int checksum(){
+    public static int checksum(String zip){
 	int sum = 0;
 	for (int i = 0; i < zip.length(); i++){
 	    sum += Integer.parseInt(zip.substring(i, i+1));
@@ -41,7 +50,30 @@ public class Barcode implements Comparable<Barcode>{
 	return sum % 10 ;
     }
 
+    public static String toCode(String zip){
+	if (zip.length() != 5){
+	    throw new IllegalArgumentException();
+	}
+        try {
+	    int s;
+	    s = Integer.parseInt(zip);
+	} catch (NumberFormatException e){
+	    throw new IllegalArgumentException();
+	}
+	String code = "";
+	for (int i = 0; i < zip.length(); i++){
+	    code += dictionary[Integer.parseInt(zip.substring(i, i+1))];
+	}
+	code += dictionary[checksum(zip)];
+	return "|" +  code + "|";
+    }
+
+    public static String toZip(String code){
+	return "";
+    }
+
     public static void main(String[]args){
+	
     	Barcode a = new Barcode("11592");
     	Barcode b = new Barcode("11592");
     	Barcode c = new Barcode("00000");
@@ -49,7 +81,12 @@ public class Barcode implements Comparable<Barcode>{
     	System.out.println("a: " + a);
     	System.out.println("b: " + b);
     	System.out.println("c: " + c);
-    
+
+	System.out.println(a.compareTo(b)); //0
+	System.out.println(c.compareTo(a)); //negative
+	System.out.println(a.compareTo(c)); //positive
+	
+	
 	System.out.println(a.equals(b)); //true
     	System.out.println(a.equals(c)); //false
 	

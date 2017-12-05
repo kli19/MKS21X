@@ -199,6 +199,7 @@ public class WordSearch  {
 	    } catch (NumberFormatException e) {
 		System.err.println(error);
 		System.exit(1);
+
 	    }
 
 	    if (r <= 0 || c <= 0){
@@ -217,7 +218,6 @@ public class WordSearch  {
 	if (args.length >= 4) {
 	    try {
 	        s = Integer.parseInt(args[3]);
-
 	    } catch (NumberFormatException e) {
 		System.err.println(error);
 		System.exit(1);
