@@ -30,7 +30,7 @@ public class Barcode implements Comparable<Barcode>{
     }
 
     public String toString(){
-	return getCode() + " (" + getZip() + ")";
+	return getCode() + " (" + getZip() + ")" + "\n" + toZip("|||:::||:::||:::||:::||:::||:::|");
     }
 
 	
@@ -69,7 +69,10 @@ public class Barcode implements Comparable<Barcode>{
     }
 
     public static String toZip(String code){
-	return "";
+	String zip = "";
+
+	
+	return zip;
     }
 
     public static void main(String[]args){
