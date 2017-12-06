@@ -3,7 +3,16 @@ public class Sorts{
     /**EDIT THIS METHOD TO MATCH YOUR NAME 
      */
     public static String name(){
-	return "01.Li.Karen"; 
+	return "10.Li.Karen"; 
+    }
+
+    public static boolean isSorted(int[]ary){
+	for(int i = 0; i < ary.length-1; i++){
+	    if (ary[i] > ary[i+1]){
+		return false;
+	    }
+	}
+	return true;
     }
 
     /**Selection sort of an int array. 
@@ -31,8 +40,12 @@ public class Sorts{
 	int[] a = {64, 25, 12, 22, 11};
 	System.out.println(Arrays.toString(a));
 
+	System.out.println(isSorted(a));
+
 	selectionSort(a);
 	System.out.println(Arrays.toString(a));
-	
+
+
+	System.out.println(isSorted(a));
     }
 }
