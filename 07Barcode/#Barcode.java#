@@ -124,10 +124,7 @@ public class Barcode implements Comparable<Barcode>{
 
 
 	//System.out.println(toCode("10282")); // returns |:::||||:::::|:||::|:::|:|::||:|
-	//System.out.println(toZip("|:::||||:::::|:||::|:::|:|::||:|")); //returns 10282
-
-       
-	
+	//System.out.println(toZip("|:::||||:::::|:||::|:::|:|::||:|")); //returns 10282	
 	       
 	//should throw IllegalArgumentException
 
@@ -137,7 +134,7 @@ public class Barcode implements Comparable<Barcode>{
 	
 	//Barcode x = new Barcode("123"); //length less than 5
 	//Barcode x = new Barcode("123456"); //length greater than 5
-	Barcode x = new Barcode("123ab"); //contains non digit
+	//Barcode x = new Barcode("123ab"); //contains non digit
 	
 	//System.out.println(toZip("|||:::||:::||:::||:::||:::||:::")); //length less than 32
 	//System.out.println(toZip("|||:::||:::||:::||:::||:::||:::||||"));//;ength greater than 32
