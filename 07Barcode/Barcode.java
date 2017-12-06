@@ -110,24 +110,21 @@ public class Barcode implements Comparable<Barcode>{
     	Barcode b = new Barcode("10282");
     	Barcode c = new Barcode("10101");
     
-    	System.out.println("a: " + a); //a: |:::||||:::::|:||::|:::|:|::||:| (10282)
-    	System.out.println("b: " + b); //b: |:::||||:::::|:||::|:::|:|::||:| (10282)
-    	System.out.println("c: " + c); //c: |:::||||::::::||||::::::||::||:| (10101)
+    	//System.out.println("a: " + a); //a: |:::||||:::::|:||::|:::|:|::||:| (10282)
+    	//System.out.println("b: " + b); //b: |:::||||:::::|:||::|:::|:|::||:| (10282)
+    	//System.out.println("c: " + c); //c: |:::||||::::::||||::::::||::||:| (10101)
 
-	System.out.println(a.compareTo(b)); //0
-	System.out.println(c.compareTo(a)); //negative
-	System.out.println(a.compareTo(c)); //positive
+	//System.out.println(a.compareTo(b)); //0
+	//System.out.println(c.compareTo(a)); //negative
+	//System.out.println(a.compareTo(c)); //positive
 	
 	
-	System.out.println(a.equals(b)); //true
-    	System.out.println(a.equals(c)); //false
+	//System.out.println(a.equals(b)); //true
+    	//System.out.println(a.equals(c)); //false
 
 
 	//System.out.println(toCode("10282")); // returns |:::||||:::::|:||::|:::|:|::||:|
-	//System.out.println(toZip("|:::||||:::::|:||::|:::|:|::||:|")); //returns 10282
-
-       
-	
+	//System.out.println(toZip("|:::||||:::::|:||::|:::|:|::||:|")); //returns 10282	
 	       
 	//should throw IllegalArgumentException
 
@@ -137,7 +134,7 @@ public class Barcode implements Comparable<Barcode>{
 	
 	//Barcode x = new Barcode("123"); //length less than 5
 	//Barcode x = new Barcode("123456"); //length greater than 5
-	Barcode x = new Barcode("123ab"); //contains non digit
+	//Barcode x = new Barcode("123ab"); //contains non digit
 	
 	//System.out.println(toZip("|||:::||:::||:::||:::||:::||:::")); //length less than 32
 	//System.out.println(toZip("|||:::||:::||:::||:::||:::||:::||||"));//;ength greater than 32
