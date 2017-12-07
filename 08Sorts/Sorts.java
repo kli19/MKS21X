@@ -15,6 +15,18 @@ public class Sorts{
 	return true;
     }
 
+    
+    public static void bogoSort(int[]ary){
+	while(!isSorted(ary)){
+	    for (int i = 0; i < ary.length; i++){
+		int temp = ary[i];
+		int newSpot = (int)(Math.random()*ary.length);
+		ary[i] = ary[newSpot];
+		ary[newSpot] = temp;		    
+	    }
+	}
+    }
+
     /**Selection sort of an int array. 
      *Upon completion, the elements of the array will be in increasing order.
      *@param data  the elements to be sorted.
@@ -37,15 +49,23 @@ public class Sorts{
 
 
     public static void main(String[]args){
-	int[] a = {64, 25, 12, 22, 11};
-	System.out.println(Arrays.toString(a));
+	// testing selectionSort
+	//int[] a = {64, 25, 12, 22, 11};
+	//System.out.println(Arrays.toString(a)); //[64, 25, 12, 22, 11]
+	//System.out.println(isSorted(a)); //false
+	//selectionSort(a); 
+	//System.out.println(Arrays.toString(a)); //[11, 12, 22, 25, 64]
+	//System.out.println(isSorted(a)); //true
 
-	System.out.println(isSorted(a));
+	// testing bogoSort
+	//int[] randish = new int[5];
+	//for (int i = 0; i < randish.length; i++){
+	//    randish[i] = (int)(Math.random()*100);
+	//}
 
-	selectionSort(a);
-	System.out.println(Arrays.toString(a));
-
-
-	System.out.println(isSorted(a));
+	//System.out.println(Arrays.toString(randish));
+	//bogoSort(randish);
+	//System.out.println(Arrays.toString(randish));
     }
+  
 }
