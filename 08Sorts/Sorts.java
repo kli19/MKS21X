@@ -93,9 +93,9 @@ public class Sorts{
 
 	
 	//testing bubbleSort
-	System.out.println(Arrays.toString(a));
-	bubbleSort(a);
-	System.out.println(Arrays.toString(a));
+	//System.out.println(Arrays.toString(a));
+	//bubbleSort(a);
+	//System.out.println(Arrays.toString(a));
     }
   
 }
