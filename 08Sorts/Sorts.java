@@ -52,12 +52,19 @@ public class Sorts{
 	    data[index] = temp;
 	}
     }
+
+    public static void bubbleSort(int[] data){
+	
+    }
+    
     public static void main(String[]args){
-	// testing selectionSort
+        
 	//int[] a = new int[5];
 	//for (int i = 0; i < a.length; i++){
 	//    a[i] = (int)(Math.random()*100);
 	//}
+
+	//testing selectionSort
 	//System.out.println(Arrays.toString(a)); //[64, 25, 12, 22, 11]
 	//System.out.println(isSorted(a)); //false
 	//selectionSort(a); 
@@ -65,22 +72,14 @@ public class Sorts{
 	//System.out.println(isSorted(a)); //true
 
 	// testing bogoSort
-	//int[] randish = new int[5];
-	//for (int i = 0; i < randish.length; i++){
-	//    randish[i] = (int)(Math.random()*100);
-	//}
-	//System.out.println(Arrays.toString(randish));
-	//bogoSort(randish);
-	//System.out.println(Arrays.toString(randish));
+	//System.out.println(Arrays.toString(a));
+	//bogoSort(a);
+	//System.out.println(Arrays.toString(a));
 
 	// testing insertionSort
-	int[] ary = new int[5];
-	for (int i = 0; i < ary.length; i++){
-	    ary[i] = (int)(Math.random()*100);
-	}
-	System.out.println(Arrays.toString(ary));
-	insertionSort(ary);
-	System.out.println(Arrays.toString(ary));
+	//System.out.println(Arrays.toString(a));
+	//insertionSort(a);
+	//System.out.println(Arrays.toString(a));
 
 	
 
