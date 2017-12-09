@@ -54,15 +54,25 @@ public class Sorts{
     }
 
     public static void bubbleSort(int[] data){
-	
+	for (int i = 0; i < data.length; i++){
+	    int max;
+	    for (int j = 1; j < data.length - i; j++){
+		if ( data[j-1] > data[j]){
+		    max = data[j-1];
+		    data[j-1] = data[j];
+		    data[j] = max;
+		}
+
+	    }
+	}
     }
     
     public static void main(String[]args){
         
-	//int[] a = new int[5];
-	//for (int i = 0; i < a.length; i++){
-	//    a[i] = (int)(Math.random()*100);
-	//}
+	int[] a = new int[5];
+	for (int i = 0; i < a.length; i++){
+	    a[i] = (int)(Math.random()*100);
+	}
 
 	//testing selectionSort
 	//System.out.println(Arrays.toString(a)); //[64, 25, 12, 22, 11]
@@ -82,7 +92,10 @@ public class Sorts{
 	//System.out.println(Arrays.toString(a));
 
 	
-
+	//testing bubbleSort
+	System.out.println(Arrays.toString(a));
+	bubbleSort(a);
+	System.out.println(Arrays.toString(a));
     }
   
 }
