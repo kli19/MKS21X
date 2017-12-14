@@ -35,23 +35,23 @@ public class Temperature extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String str = e.getActionCommand();
 	System.out.println(str);
-	if (str.equals("Celcius To Fahrenheit")){
-	    double result = CToF(Double.parseDouble(text.getText()));
-	    text.setText("" + result);
+         if (str.equals("Celcius to Fahrenheit")){
+	    double result = CF(Double.parseDouble(text.getText()));
+	    text.setText( result + "");
 	}     
 
 	if (str.equals("Fahrenheit To Celcius")){
-	    double result = FToC(Double.parseDouble(text.getText()));
-	    text.setText("" + result);
+	    double result = FC(Double.parseDouble(text.getText()));
+	    text.setText(result + "");
 	}  	
 	
     }
 
-    public static double CToF(double c){
+    public static double CF(double c){
 	return (9.0/5)*c + 32;
     }
 
-    public static double FToC(double f){
+    public static double FC(double f){
 	return (5.0/9)*(f -32);
     }
 
