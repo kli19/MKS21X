@@ -11,12 +11,15 @@ public class Temperature extends JFrame{
     
     public Temperature(){
 	this.setTitle("Temperature");
-	this.setSize(1000,500);
-	this.setLocation(200,100);
+	this.setSize(200,300);
+	this.setLocation(100,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
+
+	text = new JTextField(5);
+	pane.add(text);
     }
 
 
