@@ -38,12 +38,12 @@ public class Temperature extends JFrame implements ActionListener{
 	if (str.equals("Celcius To Fahrenheit")){
 	    double result = CToF(Double.parseDouble(text.getText()));
 	    text.setText("" + result);
-	}
+	}     
 
 	if (str.equals("Fahrenheit To Celcius")){
 	    double result = FToC(Double.parseDouble(text.getText()));
 	    text.setText("" + result);
-	}     
+	}  	
 	
     }
 
