@@ -33,6 +33,16 @@ public class Temperature extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
+	String str = e.getActionCommand();
+	System.out.println(str);
+    }
+
+    public static double CtoF(double c){
+	return (9.0/5)*c + 32;
+    }
+
+    public static double FtoC(double f){
+	return (5.0/9)*(f -32);
     }
 
 
