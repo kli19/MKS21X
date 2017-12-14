@@ -20,6 +20,12 @@ public class Temperature extends JFrame{
 
 	text = new JTextField(5);
 	pane.add(text);
+
+	CToF = new JButton("Celcius to Fahrenheit");
+	pane.add(CToF);
+
+        FToC = new JButton("Fahrenheit To Celcius");
+	pane.add(FToC);
     }
 
 
