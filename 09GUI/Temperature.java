@@ -14,22 +14,22 @@ public class Temperature extends JFrame implements ActionListener{
 	this.setSize(200,300);
 	this.setLocation(100,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+	
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
 
 	text = new JTextField(5);
+	text.addActionListener(this);
 	pane.add(text);
 
 	CToF = new JButton("Celcius to Fahrenheit");
+	CToF.addActionListener(this);
 	pane.add(CToF);
 
         FToC = new JButton("Fahrenheit To Celcius");
+	FToC.addActionListener(this);
 	pane.add(FToC);
 
-	text.addActionListener(this);
-	CToF.addActionListener(this);
-	FToC.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e){
@@ -37,7 +37,7 @@ public class Temperature extends JFrame implements ActionListener{
 	System.out.println(str);
          if (str.equals("Celcius to Fahrenheit")){
 	    double result = CF(Double.parseDouble(text.getText()));
-	    text.setText( result + "");
+	    text.setText(result + "");
 	}     
 
 	if (str.equals("Fahrenheit To Celcius")){
